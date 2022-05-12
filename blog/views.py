@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import ListView,DetailView,CreateView,UpdateView,DeleteView
 from django.contrib.auth.forms import UserCreationForm
 from django.views import generic
+# from requests import request
 from .models import Post
 from django.urls import reverse_lazy
 
@@ -17,6 +18,7 @@ class DetailsView(DetailView):
 
 class BlogCreateView(CreateView):
     model = Post
+    # user = request.user
     template_name = 'post_new.html'
     fields = ['title','author','body']
 
